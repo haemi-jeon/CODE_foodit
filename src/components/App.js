@@ -15,17 +15,16 @@ function App() {
     setItems(nextItems);
   };
 
-  const handleLoad = async () => {
-    const { foods } = await getFoods();
-    console.log(foods);
+  const handleLoad = async orderQeury => {
+    const { foods } = await getFoods(orderQeury);
     setItems(foods);
   };
 
-  useEffect(() => {
-    handleLoad();
-  }, []);
-
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
+
+  useEffect(() => {
+    handleLoad(order);
+  }, [order]);
 
   return (
     <div>
