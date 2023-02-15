@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
-import App from './components/App';
+// import App from './components/App';
+import FoodForm from './components/FoodForm';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<FoodForm />, document.getElementById('root'));
