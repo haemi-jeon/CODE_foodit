@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
 // import App from './components/App';
-import FoodForm from './components/FoodForm';
+import Form from './components/Form';
 
-ReactDOM.render(<FoodForm />, document.getElementById('root'));
+ReactDOM.render(<Form />, document.getElementById('root'));
