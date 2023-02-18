@@ -13,28 +13,27 @@ function sanitize(type, value) {
 
 function Form() {
   const [values, setValues] = useState({
+    imgFile: null,
     title: '',
     calorie: 0,
     content: '',
-    imgFile: null,
   });
 
-  const handleChange = e => {
-    const { name, value, type } = e.target;
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(values);
+  };
+
+  const handleChange = (name, value) => {
     setValues(prevValues => ({
       ...prevValues,
-      [name]: sanitize(type, value),
+      [name]: value,
     }));
   };
 
   const handleInputChange = e => {
     const { name, value, type } = e.target;
-    handleChange(name, value, type);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(values);
+    handleChange(name, sanitize(type, value));
   };
 
   return (
